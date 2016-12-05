@@ -1,0 +1,106 @@
+\documentclass[UTF8, punct=kaiming]{ctexbook}
+
+\usepackage{fontspec}
+% ﻿\setCJKmainfont[BoldFont={PingFang SC Bold}, ItalicFont={PingFang SC Light}]{PingFang SC}
+% \setCJKfamilyfont{zhongsong}{STZhongsong} \newcommand{\zhongsong}{\CJKfamily{zhongsong}}
+
+\usepackage{multicol}
+\pagestyle{empty}
+
+\usepackage[usenames]{xcolor}
+% 黑白色
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+\definecolor{midgray}{HTML}{666666}
+% 基本色
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+% 日本色
+\definecolor{sakura}{HTML}{FEDFE1}
+\definecolor{ichigo}{HTML}{B5495B}
+\definecolor{momo}{HTML}{F596AA}
+\definecolor{kurenai}{HTML}{CB1B45}
+\definecolor{butan}{HTML}{C1328E}
+\definecolor{usubeni}{HTML}{E87A90}
+\definecolor{nanoha}{HTML}{F7D94C}
+\definecolor{enji}{HTML}{9F353A}
+\definecolor{gusa}{HTML}{7DB9DE}
+\definecolor{asagi}{HTML}{33A6B8}
+\definecolor{mizu}{HTML}{81C7D4}
+\definecolor{chigusa}{HTML}{3A8FB7} % 千草
+\definecolor{ruri}{HTML}{005CAF} % 琉璃
+
+\usepackage{geometry}
+\geometry{left=2.3cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
+
+\usepackage[math-style=TeX, vargreek-shape=unicode]{unicode-math}
+
+\usepackage{pifont}
+
+\usepackage{fontawesome}
+
+\usepackage{progressbar}
+
+\usepackage[hidelinks,unicode]{hyperref}
+\hypersetup{
+  pdftitle={Saki萌战应援},
+  pdfauthor={王者自由},
+  pdfsubject={2014},
+  pdfkeywords={}
+}
+
+\usepackage{enumitem}
+\linespread{1.2}
+\setlist{partopsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[itemize, 1]{align=left, labelindent*=1em, label={\makebox[1.8em][r]{\color{ichigo}\ding{166}}}, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
+\setlist[itemize, 2]{leftmargin=0em, label={\color{gusa}\ding{101}}, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
+\setlist[enumerate, 1]{leftmargin=0em, labelindent*=.5em}
+\setlist[enumerate, 2]{leftmargin=0em, labelindent*=.5em, topsep=0pt}
+
+\newcommand\sect[1]{\vspace*{1.2em plus 1em minus 1em}\par\colorbox{mizu}{\makebox[\columnwidth][l]{\itshape\color{white}\zihao{3} #1}}\par}
+\newcommand\name[1]{{\color{ichigo}\zihao{2}\kaishu #1}}
+\newcommand\skillbar[1]{\progressbar[width=13em, linecolor=white, tickscolor=momo, emptycolor=sakura, filledcolor=ichigo]{#1}}
+\newcommand\langbar[1]{\progressbar[width=4.5em, linecolor=white, tickscolor=mizu, emptycolor=gusa, filledcolor=chigusa]{#1}}
+\newcommand\ltitem[2]{\item {\bfseries #1} \hfill {\kaishu #2}}
+\newcommand\atitem[2]{\item {#1} \hfill {\kaishu #2}}
+\newcommand\myitem[2]{\item [{\makebox[1em][c]{\color{ichigo} #1}}] {\sf #2}}
+\newcommand\laitem[2]{\item [{\makebox[5em][r]{\color{chigusa} \bfseries #1}}] {#2}}
+\newcommand\hl[1]{{\color{chigusa}#1}}
+\newcommand\hb[1]{{\color{chigusa}\bfseries #1}}
+\renewcommand\url[1]{\href{http://#1}{#1}}
+\newcommand\urls[1]{\href{https://#1}{#1}}
+\newcommand\email[1]{\href{mailto:#1}{#1}}
+
+\newcommand{\lastupdated}{{\color{midgray}{\fontsize{8pt}{10pt}\selectfont \today 制作}}}
+
+\usepackage{fancyhdr}
+\fancyhfoffset{0em}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{\lastupdated} 
+
+\ctexset{
+chapter/name = {第,部分},
+chapter/number = \chinese{chapter}
+}
+
+\begin{document}
+
+\title{Saki萌战应援}
+\author{那些年我们打过的萌战}
+\maketitle
+
+\tableofcontents
+
+\input{suehara}
+\input{kingfree}
+
+\end{document}
