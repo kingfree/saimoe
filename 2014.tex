@@ -1,13 +1,19 @@
 \documentclass[UTF8, punct=kaiming]{ctexbook}
 
 \usepackage{fontspec}
-% ﻿\setCJKmainfont[BoldFont={PingFang SC Bold}, ItalicFont={PingFang SC Light}]{PingFang SC}
-% \setCJKfamilyfont{zhongsong}{STZhongsong} \newcommand{\zhongsong}{\CJKfamily{zhongsong}}
+\setmainfont[BoldFont={PingFang SC Bold}]{PingFang SC}
+\setCJKmainfont[BoldFont={PingFang SC Bold}, ItalicFont={KFKai}]{PingFang SC}
+\setCJKmonofont{KFKai}
+\setCJKfamilyfont{zhongsong}{STZhongsong} \newcommand{\zhongsong}{\CJKfamily{zhongsong}}
+
+\newfontfamily\minchoe{MS Mincho}
+\setCJKfamilyfont{mincho}{MS Mincho}
+\newcommand{\mincho}{\minchoe\CJKfamily{mincho}}
 
 \usepackage{multicol}
 \pagestyle{empty}
 
-\usepackage[usenames]{xcolor}
+\usepackage[usenames, table]{xcolor}
 % 黑白色
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{black}{HTML}{000000}
@@ -35,9 +41,14 @@
 \definecolor{mizu}{HTML}{81C7D4}
 \definecolor{chigusa}{HTML}{3A8FB7} % 千草
 \definecolor{ruri}{HTML}{005CAF} % 琉璃
+% 作品色
+\definecolor{saki}{HTML}{FEDFE1} % 咲 -Saki-, 桜
+\definecolor{lovelive}{HTML}{91B493} % LoveLive, 薄青
 
 \usepackage{geometry}
-\geometry{left=2.3cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
+\geometry{left=2.2cm, top=1.6cm, right=2.0cm, bottom=1.8cm, footskip=.4cm}
+
+\usepackage[toc]{multitoc}
 
 \usepackage[math-style=TeX, vargreek-shape=unicode]{unicode-math}
 
@@ -45,15 +56,19 @@
 
 \usepackage{fontawesome}
 
-\usepackage{progressbar}
+\usepackage{tabularx}
 
-\usepackage[hidelinks,unicode]{hyperref}
-\hypersetup{
-  pdftitle={Saki萌战应援},
-  pdfauthor={王者自由},
-  pdfsubject={2014},
-  pdfkeywords={}
+\usepackage{xhfill}
+\newcommand{\xfill}[2][1ex]{{%
+  \dimen0=#2\advance\dimen0 by #1
+  \leaders\hrule height \dimen0 depth -#1\hfill%
+}}
+\newcommand{\xfilll}[2][1ex]{%
+  \dimen0=#2\advance\dimen0 by #1%
+  \leaders\hrule height \dimen0 depth -#1\hfill%
 }
+
+\usepackage{multirow}
 
 \usepackage{enumitem}
 \linespread{1.2}
@@ -63,34 +78,57 @@
 \setlist[enumerate, 1]{leftmargin=0em, labelindent*=.5em}
 \setlist[enumerate, 2]{leftmargin=0em, labelindent*=.5em, topsep=0pt}
 
-\newcommand\sect[1]{\vspace*{1.2em plus 1em minus 1em}\par\colorbox{mizu}{\makebox[\columnwidth][l]{\itshape\color{white}\zihao{3} #1}}\par}
-\newcommand\name[1]{{\color{ichigo}\zihao{2}\kaishu #1}}
-\newcommand\skillbar[1]{\progressbar[width=13em, linecolor=white, tickscolor=momo, emptycolor=sakura, filledcolor=ichigo]{#1}}
-\newcommand\langbar[1]{\progressbar[width=4.5em, linecolor=white, tickscolor=mizu, emptycolor=gusa, filledcolor=chigusa]{#1}}
-\newcommand\ltitem[2]{\item {\bfseries #1} \hfill {\kaishu #2}}
-\newcommand\atitem[2]{\item {#1} \hfill {\kaishu #2}}
-\newcommand\myitem[2]{\item [{\makebox[1em][c]{\color{ichigo} #1}}] {\sf #2}}
-\newcommand\laitem[2]{\item [{\makebox[5em][r]{\color{chigusa} \bfseries #1}}] {#2}}
-\newcommand\hl[1]{{\color{chigusa}#1}}
-\newcommand\hb[1]{{\color{chigusa}\bfseries #1}}
-\renewcommand\url[1]{\href{http://#1}{#1}}
-\newcommand\urls[1]{\href{https://#1}{#1}}
-\newcommand\email[1]{\href{mailto:#1}{#1}}
-
-\newcommand{\lastupdated}{{\color{midgray}{\fontsize{8pt}{10pt}\selectfont \today 制作}}}
-
 \usepackage{fancyhdr}
-\fancyhfoffset{0em}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhf{}
+%\fancyhfoffset{0em}
+%\renewcommand{\headrulewidth}{0pt}
+%\fancyhf{}
 \pagestyle{fancy}
-\fancyfoot{}
-\fancyfoot[R]{\lastupdated} 
+%\fancyfoot{}
+%\fancyfoot[R]{}
 
-\ctexset{
-chapter/name = {第,部分},
-chapter/number = \chinese{chapter}
+%\usepackage{tablestyles}
+\usepackage{colortbl}
+\newcommand{\DataTable}[3]{{
+\ctexset{space=true}
+  %\begin{table}[!htbp]
+    % \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{#2}% #2 = col
+    #3
+    \end{tabular}
+  %  \centering
+  %  \caption{#1}
+  %  \label{#1}% #1 = caption
+  %\end{table}
+}}
+\newcommand{\thead}{\bfseries \centering}
+\newcommand{\codesu}[1]{\multicolumn{3}{l}{#1}}
+\newcommand{\kokomade}[1]{\multicolumn{3}{l}{\xrfill{1.5pt}{#1}\xrfill{1.5pt}}}
+\newcommand{\VoteTabled}[1]{{\mincho\begin{tabular}{rrl}#1\end{tabular}}}
+\newcommand{\VoteTable}[1]{{\ctexset{space=true}\mincho\begin{quote}#1\end{quote}}}
+
+\usepackage[hidelinks,unicode]{hyperref}
+\hypersetup{
+  pdftitle={Saki萌战应援},
+  pdfauthor={王者自由},
+  pdfsubject={2014},
+  pdfkeywords={}
 }
+
+\makeatletter
+\providecommand\phantomsection{}% for hyperref
+
+\newcommand\listofillustrations{%
+    \chapter*{引用}%
+    \phantomsection
+    \section*{插图}%
+    \phantomsection
+    \@starttoc{lof}%
+    \bigskip
+    \section*{表格}%
+    \phantomsection
+    \@starttoc{lot}}
+
+\makeatother
 
 \begin{document}
 
@@ -99,6 +137,7 @@ chapter/number = \chinese{chapter}
 \maketitle
 
 \tableofcontents
+\listofillustrations
 
 \input{suehara}
 \input{kingfree}
