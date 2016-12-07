@@ -1,4 +1,4 @@
-\documentclass[UTF8, punct=kaiming]{ctexbook}
+\documentclass[UTF8, punct=kaiming, zihao=-4]{ctexbook}
 
 \usepackage{fontspec}
 \setmainfont[BoldFont={PingFang SC Bold}]{PingFang SC}
@@ -46,9 +46,9 @@
 \definecolor{lovelive}{HTML}{91B493} % LoveLive, 薄青
 
 \usepackage{geometry}
-\geometry{left=2.2cm, top=1.6cm, right=2.0cm, bottom=1.8cm, footskip=.4cm}
+\geometry{left=2.4cm, top=2.6cm, headheight=.8cm, right=2.0cm, bottom=3.0cm, footskip=.8cm}
 
-\usepackage[toc]{multitoc}
+% \usepackage[toc]{multitoc}
 
 \usepackage[math-style=TeX, vargreek-shape=unicode]{unicode-math}
 
@@ -70,8 +70,10 @@
 
 \usepackage{multirow}
 
+\usepackage{ruby}
+
 \usepackage{enumitem}
-\linespread{1.2}
+\linespread{1.4}
 \setlist{partopsep=2pt, itemsep=1pt, parsep=0pt}
 \setlist[itemize, 1]{align=left, labelindent*=1em, label={\makebox[1.8em][r]{\color{ichigo}\ding{166}}}, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
 \setlist[itemize, 2]{leftmargin=0em, label={\color{gusa}\ding{101}}, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
@@ -87,24 +89,34 @@
 %\fancyfoot[R]{}
 
 %\usepackage{tablestyles}
+\usepackage{longtable}
+
 \usepackage{colortbl}
 \newcommand{\DataTable}[3]{{
+\zihao{5}\renewcommand\baselinestretch{1.25}\selectfont
 \ctexset{space=true}
-  %\begin{table}[!htbp]
-    % \renewcommand{\arraystretch}{1.1}
-    \begin{tabular}{#2}% #2 = col
-    #3
-    \end{tabular}
-  %  \centering
-  %  \caption{#1}
-  %  \label{#1}% #1 = caption
-  %\end{table}
+\begin{longtable}{#2}% #2 = col
+#3
+% \centering
+% \caption{#1}
+% \label{#1}% #1 = caption 
+\end{longtable}
 }}
 \newcommand{\thead}{\bfseries \centering}
 \newcommand{\codesu}[1]{\multicolumn{3}{l}{#1}}
 \newcommand{\kokomade}[1]{\multicolumn{3}{l}{\xrfill{1.5pt}{#1}\xrfill{1.5pt}}}
+\newcommand{\VoteFont}{\fontsize{11}{12}\mincho}
 \newcommand{\VoteTabled}[1]{{\mincho\begin{tabular}{rrl}#1\end{tabular}}}
-\newcommand{\VoteTable}[1]{{\ctexset{space=true}\mincho\begin{quote}#1\end{quote}}}
+\newcommand{\VoteTable}[1]{{\begin{quote}\VoteFont #1\end{quote}}}
+\newcommand{\VoteTables}[2]{{
+\begin{longtable}{ll}
+\begin{minipage}[t]{.3\textwidth}砍票前：\\\VoteFont #1\end{minipage} &
+\begin{minipage}[t]{.65\textwidth}砍票后：\\\VoteFont #2\end{minipage}
+\end{longtable}}
+}\newcommand{\VoteTablet}[2]{{
+砍票前：\\{\VoteFont #1}\par
+砍票后：\\{\VoteFont #2}
+}}
 
 \usepackage[hidelinks,unicode]{hyperref}
 \hypersetup{
@@ -137,7 +149,7 @@
 \maketitle
 
 \tableofcontents
-\listofillustrations
+% \listofillustrations
 
 \input{suehara}
 \input{kingfree}
