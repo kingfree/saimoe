@@ -2,12 +2,16 @@
 
 \usepackage{fontspec}
 \setsansfont[BoldFont={PingFang SC Medium}]{PingFang SC Regular}
-\setmainfont[BoldFont={Songti SC Bold}]{Songti SC Regular}
+\setmainfont[BoldFont={Songti SC Bold}]{Songti SC Light}
 \setCJKsansfont[BoldFont={PingFang SC Medium}, ItalicFont={PingFang SC Light}]{PingFang SC Regular}
-\setCJKmainfont[BoldFont={Songti SC Bold}, ItalicFont={Songti SC Light}]{Songti SC Regular}
+\setCJKmainfont[BoldFont={Songti SC Bold}, ItalicFont={STFangsong}]{Songti SC Light}
 \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
 
 \setCJKfamilyfont{libian}{Libian SC Regular} \newcommand{\libian}{\CJKfamily{libian}}
+
+\newfontfamily\kaie{Kaiti SC Regular}
+\setCJKfamilyfont{kaiti}{Kaiti SC Regular}
+\newcommand{\kai}{\kaie\CJKfamily{kaiti}}
 
 \newfontfamily\zhongse{Songti SC Black}
 \setCJKfamilyfont{zhongs}{Songti SC Black}
