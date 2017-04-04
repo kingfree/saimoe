@@ -1,0 +1,33 @@
+\ctexset{
+chapter/name = {,},
+chapter/number = \arabic{chapter},
+section/number = {\arabic{chapter}.\arabic{section}},
+}
+
+\part[天麻歌赏]{{\rm\sffamily\hei 天才麻将少女系列\\歌曲歌词鉴赏}}
+\setcounter{chapter}{0}
+
+\renewcommand{\B}[1]{{\bfseries{#1}}}
+
+\newcommand{\album}[1]{\def\albumName{#1}\addcontentsline{toc}{chapter}{\shingo #1}}
+\newcommand{\songTitle}[2]{\clearpage\addcontentsline{toc}{section}{\mincho #1}{\Large\maru\B{#1}\quad{\rm\small\outai #2}}\par}
+\newcommand{\songTitled}[3]{\clearpage\addcontentsline{toc}{section}{\mincho #1}
+{\rm\tiny\mincho{#3}}\par
+{\Large\maru\B{#1}\quad{\rm\small\outai #2}}\par}
+\newcommand{\songMemo}[1]{{\rm\small\tsuku{#1}}\par}
+\newcommand{\songText}[1]{\begin{multicols}{2}{#1}\end{multicols}}
+\newcommand{\songTexts}[2]{\begin{multicols}{#1}{#2}\end{multicols}}
+\newcommand{\newcolumn}{\vfill\null
+\columnbreak}
+
+\CTEXnoindent
+
+\input{kashi/1oped}
+% \input{kashi/1chara}
+% \input{kashi/1game}
+\input{kashi/2oped}
+% \input{kashi/2chara}
+% \input{kashi/2game}
+\input{kashi/3oped}
+% \input{kashi/3chara}
+% \input{kashi/3game}

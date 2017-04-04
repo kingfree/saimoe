@@ -2,42 +2,7 @@
 
 \usepackage{geometry}
 \geometry{left=2.4cm, top=2.6cm, headheight=.8cm, right=2.0cm, bottom=3.0cm, footskip=.8cm}
-
-\usepackage{fontspec}
-\setsansfont[BoldFont={PingFang SC Medium}]{PingFang SC Regular}
-% \setmainfont[BoldFont={Songti SC Bold}]{Songti SC Light}
-\setmainfont[BoldFont={Heiti SC Medium}]{Songti SC Light}
-\setCJKsansfont[BoldFont={PingFang SC Medium}, ItalicFont={PingFang SC Light}]{PingFang SC Regular}
-% \setCJKmainfont[BoldFont={Songti SC Bold}, ItalicFont={STFangsong}]{Songti SC Light}
-\setCJKmainfont[BoldFont={Heiti SC Medium}, ItalicFont={STFangsong}]{Songti SC Light}
-\setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
-
-\setCJKfamilyfont{libian}{Libian SC Regular} \newcommand{\libian}{\CJKfamily{libian}}
-
-\newfontfamily\kaie{Kaiti SC Regular}
-\setCJKfamilyfont{kaiti}{Kaiti SC Regular}
-\newcommand{\kai}{\kaie\CJKfamily{kaiti}}
-
-\newfontfamily\heie{Heiti SC Medium}
-\setCJKfamilyfont{heiti}{Heiti SC Medium}
-\newcommand{\hei}{\heie\CJKfamily{heiti}}
-
-\newfontfamily\zhongse{Songti SC Black}
-\setCJKfamilyfont{zhongs}{Songti SC Black}
-\newcommand{\zhongs}{\zhongse\CJKfamily{zhongs}}
-
-\newfontfamily\toppanbe{Toppan Bunkyu Gothic Demibold}
-\setCJKfamilyfont{toppanb}{Toppan Bunkyu Gothic Demibold}
-\newcommand{\toppanb}{\toppanbe\CJKfamily{toppanb}}
-
-\newfontfamily\kashoe{YuKyokasho Yoko Medium}
-\setCJKfamilyfont{kasho}{YuKyokasho Yoko Medium}
-\newcommand{\kasho}{\kashoe\CJKfamily{kasho}}
-
-\newfontfamily\minchoe{YuMincho Medium}
-\setCJKfamilyfont{mincho}{KozMinPr6N-Regular}
-\newcommand{\mincho}{\minchoe\CJKfamily{mincho}}
-
+\input{fonts}
 \usepackage{multicol}
 \pagestyle{empty}
 
@@ -123,8 +88,8 @@
 \fancyhead[LO,CE]{}
 \fancyfoot[CO,RE]{}
 \fancyfoot[LO,CE]{}
-  \fancyfoot[RO,LE]{\thepage}
-  \renewcommand{\headrulewidth}{0pt}
+\fancyfoot[RO,LE]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
 }
 %\usepackage{tablestyles}
 \usepackage{longtable}
@@ -295,6 +260,11 @@ Saki萌战应援}
 \input{suehara}
 \zihao{5}
 \input{kingfree}
+\zihao{5}
+\fancyfoot[CO,CE]{\thepage}
+\fancyfoot[RO,LE]{}
+\renewcommand{\headrulewidth}{0pt}
+\input{kashi}
 % \zihao{4}
 % \input{later}
 
