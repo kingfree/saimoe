@@ -110,13 +110,22 @@
 \setlist[enumerate, 2]{leftmargin=0em, labelindent*=.5em, topsep=0pt}
 
 \usepackage{fancyhdr}
-%\fancyhfoffset{0em}
-%\renewcommand{\headrulewidth}{0pt}
-%\fancyhf{}
 \pagestyle{fancy}
-%\fancyfoot{}
-%\fancyfoot[R]{}
-
+\fancyhfoffset{0em}
+% \fancyhead[LO,RE]{head}%奇数页左侧，偶数页右侧显示页眉
+\fancyfoot[CO,RE]{}%奇数页中间，偶数页右侧页脚为空
+\fancyfoot[LO,CE]{}%奇数页左侧，偶数页中间页脚为空
+\fancyfoot[RO,LE]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+\fancyhead[CO,RE]{}
+\fancyhead[LO,CE]{}
+\fancyfoot[CO,RE]{}
+\fancyfoot[LO,CE]{}
+  \fancyfoot[RO,LE]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
 %\usepackage{tablestyles}
 \usepackage{longtable}
 
@@ -178,6 +187,13 @@
     \phantomsection
     \@starttoc{lot}}
 
+\renewcommand{\cleardoublepage}{\relax
+\clearpage
+\if@twoside \ifodd\c@page\relax\else
+\thispagestyle{empty}%
+% text
+\mbox{}\newpage\fi\fi
+}
 \makeatother
 
 
@@ -192,27 +208,73 @@
 \newcommand*{\rotrt}[1]{\rotatebox{90}{#1}} % Command to rotate right 90 degrees
 \newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} % Command to rotate left 90 degrees
 
-\newcommand*{\titleBC}{\begingroup % Create the command for including the title page in the document
+\newcommand*{\titleBC}{\thispagestyle{empty}
+\begingroup % Create the command for including the title page in the document
 \centering % Center all text
+\mbox{}
 
-\def\CP{\textit{\Huge\zhongs Saki萌战应援}} % Title
+\vspace{2cm}
 
-\settowidth{\unitlength}{\CP\CP} % Set the width of the curly brackets to the width of the title
-{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotrt{$\}$}}} \\[\baselineskip] % Print top curly bracket
-\textcolor{Sienna}{\CP} \\[\baselineskip] % Print title
-{\color{RosyBrown}\Large\kasho\bfseries SAKI SAIMOE 2014} \\ % Tagline or further description
-{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotlft{$\}$}}} % Print bottom curly bracket
+{\color{LightGoldenrod}
+\resizebox*{14cm}{\baselineskip}{\rotrt{$\}$}}} \\[\baselineskip] % Print top curly bracket
+{\fontsize{56}{72}\zhongs Saki萌战应援}\\[\baselineskip] % Print title
+{\color{RosyBrown}
+\fontsize{36}{48}\kasho\bfseries SAKI SAIMOE 2014} \\ % Tagline or further description
+{\color{LightGoldenrod}
+\resizebox*{14cm}{\baselineskip}{\rotlft{$\}$}}} % Print bottom curly bracket
 
-\vfill % Whitespace between the title and the author name
+\vspace{2cm} % Whitespace between the title and the author name
 
 {\Large\kasho{王者自由\\[.5em](咲衣憧)}}\\ % Author name
 
 \vfill % Whitespace between the author name and the publisher logo
 
-\plogo\\[0.5\baselineskip] % Publisher logo
-2017·5·1 % Year published
+% \plogo\\[0.5\baselineskip] % Publisher logo
+% 2017·5·1 % Year published
 
-\endgroup}
+{\large
+
+2014日萌麻将厨团
+
+2017闹萌组委会
+
+}
+\endgroup
+\newpage
+\thispagestyle{empty}
+\CTEXnoindent
+\vspace*{\fill}
+
+{\Large
+Saki萌战应援}
+
+\rule{\textwidth}{0.4pt}
+
+主编：王者自由
+
+封面：王者自由
+
+校对：
+
+印刷：
+
+版次：2017年4月第1次印刷
+
+开本：186mm$\times$240mm\quad 1/16
+
+印张：11.25
+
+% 定价：40.00元
+
+\vspace{1em}
+
+{\large
+
+版权所有·翻录不究}
+
+\vspace{1em}
+\CTEXindent
+}
 
 \begin{document}
 
@@ -222,19 +284,19 @@
 
 \pagestyle{empty}
 \titleBC % This command includes the title page
-
+\setcounter{page}{0}
+\pagestyle{fancy}
 \zihao{4}
 \input{preface}
 \zihao{5}
 \tableofcontents
 % \listofillustrations
-\pagestyle{plain}
 
 \zihao{4}
 \input{suehara}
 \zihao{5}
 \input{kingfree}
-\zihao{4}
-\input{later}
+% \zihao{4}
+% \input{later}
 
 \end{document}
