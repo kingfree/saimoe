@@ -1,4 +1,7 @@
-\documentclass[UTF8, punct=kaiming, zihao=-4]{ctexbook}
+\documentclass[UTF8, punct=kaiming, zihao=-4, a4paper]{ctexbook}
+
+\usepackage{geometry}
+\geometry{left=2.4cm, top=2.6cm, headheight=.8cm, right=2.0cm, bottom=3.0cm, footskip=.8cm}
 
 \usepackage{fontspec}
 \setsansfont[BoldFont={PingFang SC Medium}]{PingFang SC Regular}
@@ -69,9 +72,6 @@
 % 作品色
 \definecolor{saki}{HTML}{FEDFE1} % 咲 -Saki-, 桜
 \definecolor{lovelive}{HTML}{91B493} % LoveLive, 薄青
-
-\usepackage{geometry}
-\geometry{left=2.4cm, top=2.6cm, headheight=.8cm, right=2.0cm, bottom=3.0cm, footskip=.8cm}
 
 % \usepackage[toc]{multitoc}
 
@@ -207,6 +207,7 @@
 
 \newcommand*{\rotrt}[1]{\rotatebox{90}{#1}} % Command to rotate right 90 degrees
 \newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} % Command to rotate left 90 degrees
+\newcommand{\ittt}[3]{\makebox[4em][s]{#1}\makebox[1.4em][l]{#2}{#3}\par}
 
 \newcommand*{\titleBC}{\thispagestyle{empty}
 \begingroup % Create the command for including the title page in the document
@@ -250,27 +251,25 @@ Saki萌战应援}
 
 \rule{\textwidth}{0.4pt}
 
-主编：王者自由
-
-封面：王者自由
-
-校对：
-
-印刷：
-
-版次：2017年4月第1次印刷
-
-开本：186mm$\times$240mm\quad 1/16
-
-印张：11.25
-
-% 定价：40.00元
+\ittt{编辑}{：}{王者自由}
+\ittt{著作}{：}{末原，王者自由}
+\ittt{鸣谢}{：}{末原，zzqtgw，极·OTAKU，津津，时间污染，勤吖$\!\!$hunter，小夜}
+\ittt{   }{  }{小7，暗笑流，大笨淡の团子}
+% \ittt{   }{  }{千樱随舞，我太小白}
+\ittt{印刷}{：}{}
+\ittt{版次}{：}{2017年4月第1次印刷}
+\ittt{开本}{：}{210mm$\times$297mm\quad A4}
+\ittt{印张}{：}{10.25}
+% \ittt{定价}{：}{40.00元}
 
 \vspace{1em}
 
 {\large
+版权所有·翻录不究
 
-版权所有·翻录不究}
+\small
+
+}
 
 \vspace{1em}
 \CTEXindent
@@ -286,7 +285,7 @@ Saki萌战应援}
 \titleBC % This command includes the title page
 \setcounter{page}{0}
 \pagestyle{fancy}
-\zihao{4}
+\zihao{-4}
 \input{preface}
 \zihao{5}
 \tableofcontents
