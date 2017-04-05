@@ -9,7 +9,7 @@ section/number = {\arabic{chapter}.\arabic{section}},
 
 \renewcommand{\B}[1]{{\bfseries{#1}}}
 
-\newcommand{\album}[1]{\def\albumName{#1}\addcontentsline{toc}{chapter}{\shingo #1}}
+\newcommand{\album}[1]{\def\albumName{#1}}%\addcontentsline{toc}{chapter}{\shingo #1}}
 \newcommand{\songTitle}[2]{\clearpage\addcontentsline{toc}{section}{\mincho #1}{\Large\maru\B{#1}\quad{\rm\small\outai #2}}\par}
 \newcommand{\songTitled}[3]{\clearpage\addcontentsline{toc}{section}{\mincho #1}
 {\rm\tiny\mincho{#3}}\par
@@ -22,14 +22,19 @@ section/number = {\arabic{chapter}.\arabic{section}},
 
 \CTEXnoindent
 
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki-}
 \input{kashi/1oped}
 % \input{kashi/1chara}
 % \input{kashi/1game}
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki- 阿知賀編 episode of side-A}
 \input{kashi/2oped}
 % \input{kashi/2chara}
 % \input{kashi/2game}
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki- 全国編}
 \input{kashi/3oped}
 % \input{kashi/3chara}
 % \input{kashi/3game}
+\addcontentsline{toc}{chapter}{\shingo 咲日和 ANIMATION}
 \input{kashi/ova}
+\addcontentsline{toc}{chapter}{\shingo 映画＆ドラマ「咲-Saki-」}
 \input{kashi/drama}
