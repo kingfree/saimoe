@@ -1,25 +1,27 @@
 
 \usepackage{fontspec}
-\setsansfont[BoldFont={PingFang SC Medium}]{PingFang SC Regular}
-% \setmainfont[BoldFont={Songti SC Bold}]{Songti SC Light}
 \setmainfont[BoldFont={SourceHanSansSC-Medium}]{SourceHanSerifSC-Light}
-\setCJKsansfont[BoldFont={PingFang SC Medium}, ItalicFont={PingFang SC Light}]{PingFang SC Regular}
-% \setCJKmainfont[BoldFont={Songti SC Bold}, ItalicFont={STFangsong}]{Songti SC Light}
 \setCJKmainfont[BoldFont={SourceHanSansSC-Medium}, ItalicFont={STFangsong}]{SourceHanSerifSC-Light}
+\setsansfont[BoldFont={PingFang SC Medium}]{PingFang SC Regular}
+\setCJKsansfont[BoldFont={PingFang SC Medium}, ItalicFont={PingFang SC Light}]{PingFang SC Regular}
 \setCJKmonofont[BoldFont={Kaiti SC Bold}]{Kaiti SC Regular}
 
-\setCJKfamilyfont{libian}{Libian SC Regular} \newcommand{\libian}{\CJKfamily{libian}}
+\setCJKfamilyfont{libian}{FZHJJW--GB1-0} \newcommand{\libian}{\CJKfamily{libian}}
 
 \newfontfamily\kaie{Kaiti SC Regular}
 \setCJKfamilyfont{kaiti}{Kaiti SC Regular}
 \newcommand{\kai}{\kaie\CJKfamily{kaiti}}
 
+\newfontfamily\xinge[BoldFont={STXingkaiSC-Bold}]{STXingkaiSC-Light}
+\setCJKfamilyfont{xing}[BoldFont={STXingkaiSC-Bold}]{STXingkaiSC-Light}
+\newcommand{\xing}{\xinge\CJKfamily{xing}}
+
 \newfontfamily\heie{SourceHanSansSC-Medium}
 \setCJKfamilyfont{heiti}{SourceHanSansSC-Medium}
 \newcommand{\hei}{\heie\CJKfamily{heiti}}
 
-\newfontfamily\zhongse{SourceHanSerifSC-SemiBold}
-\setCJKfamilyfont{zhongs}{SourceHanSerifSC-SemiBold}
+\newfontfamily\zhongse{SourceHanSerifSC-Bold}
+\setCJKfamilyfont{zhongs}{SourceHanSerifSC-Bold}
 \newcommand{\zhongs}{\zhongse\CJKfamily{zhongs}}
 
 \newfontfamily\toppanbe{Toppan Bunkyu Gothic Demibold}
@@ -30,9 +32,13 @@
 \setCJKfamilyfont{kasho}{YuKyokasho Yoko Medium}
 \newcommand{\kasho}{\kashoe\CJKfamily{kasho}}
 
-\newfontfamily\minchoe[BoldFont={SourceHanSerif-Medium}]{SourceHanSerif-Light}
-\setCJKfamilyfont{mincho}[BoldFont={SourceHanSerif-Medium}]{SourceHanSerif-Light}
+\newfontfamily\minchoe[BoldFont={SourceHanSerif-SemiBold}]{SourceHanSerif-Light}
+\setCJKfamilyfont{mincho}[BoldFont={SourceHanSerif-SemiBold}]{SourceHanSerif-Light}
 \newcommand{\mincho}{\minchoe\CJKfamily{mincho}}
+
+\newfontfamily\minchobe[BoldFont={SourceHanSerif-Heavy}]{SourceHanSerif-Bold}
+\setCJKfamilyfont{minchob}[BoldFont={SourceHanSerif-Heavy}]{SourceHanSerif-Bold}
+\newcommand{\minchob}{\minchobe\CJKfamily{minchob}}
 
 \newfontfamily\marue[BoldFont={DFMaruGothic-SB-WING-RKSJ-H}]{DFMaruGothic-Md-WING-RKSJ-H}
 \setCJKfamilyfont{maru}[BoldFont={DFMaruGothic-SB-WING-RKSJ-H}]{DFMaruGothic-Md-WING-RKSJ-H}
