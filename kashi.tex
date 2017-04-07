@@ -6,12 +6,14 @@ section/number = {\arabic{chapter}.\arabic{section}},
 
 \part[天麻歌赏]{{\rm\sffamily\hei 天才麻将少女系列\\歌曲歌词鉴赏}}
 \setcounter{chapter}{0}
-
+\newcounter{kashicounter}
 \renewcommand{\B}[1]{{\bfseries{#1}}}
 
 \newcommand{\album}[1]{\def\albumName{#1}}%\addcontentsline{toc}{chapter}{\shingo #1}}
-\newcommand{\songTitle}[2]{\clearpage\addcontentsline{toc}{section}{\mincho #1}{\Large\maru\B{#1}\quad{\rm\small\outai #2}}\par}
-\newcommand{\songTitled}[3]{\clearpage\addcontentsline{toc}{section}{\mincho #1}
+\newcommand{\songT}[1]{\stepcounter{kashicounter}\addcontentsline{toc}{section}{\mincho\arabic{kashicounter}. #1}}
+\newcommand{\songTitle}[2]{\clearpage\songT{#1}
+{\Large\maru\B{#1}\quad{\rm\small\outai #2}}\par}
+\newcommand{\songTitled}[3]{\clearpage\songT{#1}
 {\rm\tiny\mincho{#3}}\par
 {\Large\maru\B{#1}\quad{\rm\small\outai #2}}\par}
 \newcommand{\songMemo}[1]{{\rm\small\tsuku{#1}}\par}
@@ -24,17 +26,27 @@ section/number = {\arabic{chapter}.\arabic{section}},
 
 \addcontentsline{toc}{chapter}{\shingo 咲-Saki-}
 \input{kashi/1oped}
-% \input{kashi/1chara}
-% \input{kashi/1game}
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki- THE~夢のヒットスクエア~キャラソン対局編}
+\input{kashi/1chara}
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki- THE~夢のヒットスクエア~キャラソン清澄対局編}
+\input{kashi/1chara2}
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki- Portable}
+\input{kashi/1game}
+
 \addcontentsline{toc}{chapter}{\shingo 咲-Saki- 阿知賀編 episode of side-A}
 \input{kashi/2oped}
-% \input{kashi/2chara}
-% \input{kashi/2game}
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki- 阿知賀編 episode of side-A キャラクターソング}
+\input{kashi/2chara}
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki- 阿知賀編 episode of side-A Portable}
+\input{kashi/2game}
+
 \addcontentsline{toc}{chapter}{\shingo 咲-Saki- 全国編}
 \input{kashi/3oped}
-% \input{kashi/3chara}
-% \input{kashi/3game}
+\addcontentsline{toc}{chapter}{\shingo 咲-Saki- 全国編 Portable}
+\input{kashi/3game}
+
 \addcontentsline{toc}{chapter}{\shingo 咲日和 ANIMATION}
 \input{kashi/ova}
+
 \addcontentsline{toc}{chapter}{\shingo 映画＆ドラマ「咲-Saki-」}
 \input{kashi/drama}
