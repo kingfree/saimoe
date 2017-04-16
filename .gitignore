@@ -6,3 +6,5 @@
 *.lof
 *.lot
 data/
+output/
+*.DS_*
