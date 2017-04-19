@@ -12,6 +12,10 @@
 \setCJKfamilyfont{kaiti}{Kaiti SC Regular}
 \newcommand{\kai}{\kaie\CJKfamily{kaiti}}
 
+\newfontfamily\Copperplatee{Copperplate}
+\setCJKfamilyfont{Copperplate}{Copperplate}
+\newcommand{\Copperplate}{\Copperplatee\CJKfamily{Copperplate}}
+
 \newfontfamily\xinge[BoldFont={STXingkaiSC-Bold}]{STXingkaiSC-Light}
 \setCJKfamilyfont{xing}[BoldFont={STXingkaiSC-Bold}]{STXingkaiSC-Light}
 \newcommand{\xing}{\xinge\CJKfamily{xing}}
@@ -24,8 +28,8 @@
 \setCJKfamilyfont{xihei}{STXihei}
 \newcommand{\xihei}{\xihe\CJKfamily{xihei}}
 
-\newfontfamily\zhongse{SourceHanSerifSC-Bold}
-\setCJKfamilyfont{zhongs}{SourceHanSerifSC-Bold}
+\newfontfamily\zhongse[BoldFont={SourceHanSerifSC-Heavy}]{SourceHanSerifSC-Bold}
+\setCJKfamilyfont{zhongs}[BoldFont={SourceHanSerifSC-Heavy}]{SourceHanSerifSC-Bold}
 \newcommand{\zhongs}{\zhongse\CJKfamily{zhongs}}
 
 \newfontfamily\toppanbe{Toppan Bunkyu Gothic Demibold}
@@ -59,3 +63,5 @@
 \newfontfamily\tsukue[BoldFont={TsukuARdGothic-Bold}]{TsukuARdGothic-Regular}
 \setCJKfamilyfont{tsuku}[BoldFont={TsukuARdGothic-Bold}]{TsukuARdGothic-Regular}
 \newcommand{\tsuku}{\tsukue\CJKfamily{tsuku}}
+
+\newcommand{\Chapter}[1]{\chapter*{#1\markboth{#1}{}}\addcontentsline{toc}{chapter}{#1}}

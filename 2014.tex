@@ -1,7 +1,7 @@
-\documentclass[UTF8, punct=kaiming, zihao=-4, a4paper]{ctexbook}
+\documentclass[UTF8, punct=kaiming, c5size, a4paper]{ctexrep}
 
 \usepackage{geometry}
-\geometry{left=2.4cm, top=2.6cm, headheight=.8cm, right=2.0cm, bottom=3.0cm, footskip=.8cm}
+\geometry{left=2.4cm, top=2.6cm, headheight=1cm, right=2.0cm, bottom=3.0cm, footskip=1.2cm}
 \input{fonts}
 \usepackage{multicol}
 \pagestyle{empty}
@@ -78,17 +78,13 @@
 \pagestyle{fancy}
 \fancyhfoffset{0em}
 % \fancyhead[LO,RE]{head}%奇数页左侧，偶数页右侧显示页眉
-\fancyfoot[CO,RE]{}%奇数页中间，偶数页右侧页脚为空
-\fancyfoot[LO,CE]{}%奇数页左侧，偶数页中间页脚为空
-\fancyfoot[RO,LE]{\thepage}
+\fancyfoot[R,L]{}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
-\fancyhead[CO,RE]{}
-\fancyhead[LO,CE]{}
-\fancyfoot[CO,RE]{}
-\fancyfoot[LO,CE]{}
-\fancyfoot[RO,LE]{\thepage}
+\fancyhead[R,L]{}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 }
 %\usepackage{tablestyles}
@@ -107,7 +103,7 @@
 }}
 
 \newcommand{\subTitle}{\zihao{2}\xing\bfseries}
-\newcommand{\subMemo}{\xing\par}
+\newcommand{\subMemo}{\large\xing\par}
 
 \newcommand{\thead}{\bfseries \centering}
 \newcommand{\codesu}[1]{\multicolumn{3}{l}{#1}}
@@ -260,20 +256,22 @@
 \titleBC % This command includes the title page
 \setcounter{page}{0}
 \pagestyle{fancy}
-\zihao{-4}
+% \zihao{-4}
 \input{preface}
-\zihao{5}
+\cleardoublepage
+% \zihao{5}
 \tableofcontents
 % \listofillustrations
 
-\zihao{5}
+% \zihao{5}
+\cleardoublepage
 \input{kingfree}
-\zihao{4}
+% \zihao{4}
+\newpage\pagestyle{empty}\quad
+\cleardoublepage
 \input{suehara}
-\zihao{5}
-\fancyfoot[CO,CE]{\small\thepage}
-\fancyfoot[RO,LE]{}
-\renewcommand{\headrulewidth}{0pt}
+% \zihao{5}
+\cleardoublepage
 \input{kashi}
 % \zihao{4}
 % \input{later}

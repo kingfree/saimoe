@@ -1,0 +1,265 @@
+\documentclass[UTF8, punct=kaiming, zihao=-4, a4paper]{ctexbook}
+
+\usepackage{geometry}
+\geometry{left=2.4cm, top=2.6cm, headheight=.8cm, right=2.0cm, bottom=3.0cm, footskip=.8cm}
+\input{fonts}
+\usepackage{multicol}
+\pagestyle{empty}
+
+\usepackage[usenames, table, svgnames]{xcolor}
+% 黑白色
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+\definecolor{midgray}{HTML}{666666}
+% 基本色
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+% 日本色
+\definecolor{sakura}{HTML}{FEDFE1}
+\definecolor{ichigo}{HTML}{B5495B}
+\definecolor{momo}{HTML}{F596AA}
+\definecolor{kurenai}{HTML}{CB1B45}
+\definecolor{butan}{HTML}{C1328E}
+\definecolor{usubeni}{HTML}{E87A90}
+\definecolor{nanoha}{HTML}{F7D94C}
+\definecolor{enji}{HTML}{9F353A}
+\definecolor{gusa}{HTML}{7DB9DE}
+\definecolor{asagi}{HTML}{33A6B8}
+\definecolor{mizu}{HTML}{81C7D4}
+\definecolor{chigusa}{HTML}{3A8FB7} % 千草
+\definecolor{ruri}{HTML}{005CAF} % 琉璃
+% 作品色
+\definecolor{saki}{HTML}{FEDFE1} % 咲 -Saki-, 桜
+\definecolor{lovelive}{HTML}{91B493} % LoveLive, 薄青
+
+% \usepackage[toc]{multitoc}
+
+\usepackage[math-style=TeX, vargreek-shape=unicode]{unicode-math}
+
+\usepackage{pifont}
+
+% \usepackage{fontawesome}
+
+\usepackage{wrapfig}
+
+\usepackage{tabularx}
+
+\usepackage{CJKulem}
+
+\usepackage{xhfill}
+\newcommand{\xfill}[2][1ex]{{%
+  \dimen0=#2\advance\dimen0 by #1
+  \leaders\hrule height \dimen0 depth -#1\hfill%
+}}
+\newcommand{\xfilll}[2][1ex]{%
+  \dimen0=#2\advance\dimen0 by #1%
+  \leaders\hrule height \dimen0 depth -#1\hfill%
+}
+
+\usepackage{multirow}
+
+\usepackage{ruby}
+
+\usepackage{enumitem}
+\linespread{1.4}
+\setlist{partopsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[itemize, 1]{align=left, labelindent*=1em, label={\makebox[1.8em][r]{\color{ichigo}\ding{166}}}, topsep={1pt plus 1pt minus 1pt}, itemsep={3pt plus 1pt minus 2pt}}
+\setlist[itemize, 2]{leftmargin=0em, label={\color{gusa}\ding{101}}, topsep={2pt plus 2pt minus 1.5pt}, partopsep={3pt plus 2pt minus 3pt}, itemsep={1pt plus 1pt minus 1pt}, parsep={1pt plus 1pt minus 1pt}}
+\setlist[enumerate, 1]{leftmargin=0em, labelindent*=.5em}
+\setlist[enumerate, 2]{leftmargin=0em, labelindent*=.5em, topsep=0pt}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhfoffset{0em}
+% \fancyhead[LO,RE]{head}%奇数页左侧，偶数页右侧显示页眉
+\fancyfoot[CO,RE]{}%奇数页中间，偶数页右侧页脚为空
+\fancyfoot[LO,CE]{}%奇数页左侧，偶数页中间页脚为空
+\fancyfoot[RO,LE]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+\fancyhead[CO,RE]{}
+\fancyhead[LO,CE]{}
+\fancyfoot[CO,RE]{}
+\fancyfoot[LO,CE]{}
+\fancyfoot[RO,LE]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+}
+%\usepackage{tablestyles}
+\usepackage{longtable}
+
+\usepackage{colortbl}
+\newcommand{\DataTable}[3]{{
+\zihao{5}\renewcommand\baselinestretch{1.25}\selectfont
+\ctexset{space=true}
+\begin{longtable}{#2}% #2 = col
+#3
+% \centering
+% \caption{#1}
+% \label{#1}% #1 = caption
+\end{longtable}
+}}
+
+\newcommand{\subTitle}{\zihao{2}\xing\bfseries}
+\newcommand{\subMemo}{\xing\par}
+
+\newcommand{\thead}{\bfseries \centering}
+\newcommand{\codesu}[1]{\multicolumn{3}{l}{#1}}
+\newcommand{\kokomade}[1]{\multicolumn{3}{l}{\xrfill{1.5pt}{#1}\xrfill{1.5pt}}}
+\newcommand{\VoteFont}{\fontsize{10}{11}\kasho}
+\newcommand{\VoteTabled}[1]{{\mincho\begin{tabular}{rrl}#1\end{tabular}}}
+\newcommand{\VoteTable}[1]{{\begin{quote}\ctexset{space=true}\VoteFont #1\end{quote}}}
+\newcommand{\VoteTables}[2]{{\ctexset{space=true}
+\begin{longtable}{ll}
+\begin{minipage}[t]{.37\textwidth}\kai 砍票前：\\\VoteFont #1\end{minipage} &
+\begin{minipage}[t]{.59\textwidth}\kai 砍票后：\\\VoteFont #2\end{minipage}
+\end{longtable}}
+}\newcommand{\VoteTablet}[2]{{\ctexset{space=true}
+\kai 砍票前：\\{\VoteFont #1}\par
+砍票后：\\{\VoteFont #2}
+}}
+\newcommand{\Graph}[1]{\includegraphics[width=0.45\textwidth]{images/graph#1}}
+\newcommand{\Cell}[2]{\multirow{#1}{*}{\parbox[t]{5em}{\centering #2}}}
+
+\newcommand{\Madomagi}{劇場版~魔法少女まどか$\!$☆$\!$マギカ$\!$[$\!$新編$\!$]$\!$叛逆の物語}
+\newcommand{\Mado}{魔法少女まどか$\!$☆$\!$マギカ}
+\newcommand{\Saki}{咲-Saki-~全国編}
+\newcommand{\Railgan}{とある科学の超電磁砲$\!$S}
+\newcommand{\Kaminomi}{神のみぞ知るセカイ~女神篇}
+% \newcommand{\LoveLive}{咲-Saki-~全国編}
+
+\usepackage[hidelinks,unicode]{hyperref}
+\hypersetup{
+  pdftitle={東山奈央最萌大赛},
+  pdfauthor={王者自由},
+  pdfsubject={2017},
+  pdfkeywords={}
+}
+
+\makeatletter
+\providecommand\phantomsection{}% for hyperref
+
+\newcommand\listofillustrations{%
+    \chapter*{引用}%
+    \phantomsection
+    \section*{插图}%
+    \phantomsection
+    \@starttoc{lof}%
+    \bigskip
+    \section*{表格}%
+    \phantomsection
+    \@starttoc{lot}}
+
+\renewcommand{\cleardoublepage}{\relax
+\clearpage
+\if@twoside \ifodd\c@page\relax\else
+\thispagestyle{empty}%
+% text
+\mbox{}\newpage\fi\fi
+}
+\makeatother
+
+
+\newcommand*{\plogo}{\fbox{$\mathcal{CP20}$}} % Generic publisher logo
+
+\usepackage{graphicx} % Required for box manipulation
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\rotrt}[1]{\rotatebox{90}{#1}} % Command to rotate right 90 degrees
+\newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} % Command to rotate left 90 degrees
+\newcommand{\ittt}[3]{\makebox[4em][s]{#1}\makebox[1.4em][l]{#2}{#3}\par}
+
+\newcommand*{\titleBC}{\thispagestyle{empty}
+\begingroup % Create the command for including the title page in the document
+\centering % Center all text
+\mbox{}
+
+\vspace{2cm}
+
+{\color[HTML]{cd1a5f}
+\fontsize{32}{48}\Copperplate naomoe}
+
+{\color{LightGoldenrod}
+\resizebox*{14cm}{\baselineskip}{\rotrt{$]$}}} \\[\baselineskip] % Print top curly bracket
+{\fontsize{50}{72}\zhongs {\minchob 東山奈央}最萌大赛}\\[\baselineskip] % Print title
+{\color{DarkBlue}
+\fontsize{32}{48}\Copperplate Toyama Nao Saimoe Tournament 2017} \\ % Tagline or further description
+{\color{LightGoldenrod}
+\resizebox*{14cm}{\baselineskip}{\rotlft{$]$}}} % Print bottom curly bracket
+
+{\color[HTML]{cd1a5f}
+\fontsize{60}{72}\zhongs\bfseries 闹萌}
+
+\vspace{2cm} % Whitespace between the title and the author name
+
+% {\Large\kasho{王者自由\\[.5em](咲衣憧)}}\\ % Author name
+
+\vfill % Whitespace between the author name and the publisher logo
+
+% \plogo\\[0.5\baselineskip] % Publisher logo
+% 2017·5·1 % Year published
+
+{\large
+
+奈央同萌会
+
+2017闹萌组委会
+
+}
+\endgroup
+\newpage
+\thispagestyle{empty}
+
+
+\CTEXnoindent
+\vspace*{\fill}
+
+{\Large
+東山奈央最萌大赛}
+
+\rule{\textwidth}{0.4pt}
+
+\ittt{编辑}{：}{王者自由}
+% \ittt{校对}{：}{末原}
+% \ittt{鸣谢}{：}{zzqtgw\quad 极·OTAKU\quad 津津\quad 时间污染\quad 勤吖$\!$hunter}
+% \ittt{   }{  }{小7\quad 暗笑流\quad 大笨淡の团子}
+% \ittt{原作}{：}{\mincho 小林立}
+% \ittt{衍生作}{：}{\mincho 小野学\quad 五十嵐あぐり\quad 木吉紗\quad めきめき}
+% % \ittt{印刷}{：}{}
+% \ittt{版次}{：}{2017年4月~第二版~第1次印刷}
+% \ittt{开本}{：}{210mm$\times$297mm\quad A4}
+% \ittt{印张}{：}{13.5}
+% \ittt{定价}{：}{40.00元}
+
+\vspace{1em}
+
+{\large
+版权所有·翻录不究
+
+\small
+允许非盈利目的的转让、复制和再发行。不承担由此引发的任何侵权行为衍生的相关法律责任。
+}
+
+\vspace{1em}
+\CTEXindent
+}
+
+\begin{document}
+
+\pagestyle{empty}
+\titleBC
+\setcounter{page}{0}
+\pagestyle{fancy}
+\input{naopre}
+\tableofcontents
+\input{naomoe}
+\end{document}
