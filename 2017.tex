@@ -1,7 +1,7 @@
-\documentclass[UTF8, punct=kaiming, zihao=-4, a4paper]{ctexbook}
+\documentclass[UTF8, punct=kaiming, c5size, a4paper]{ctexrep}
 
 \usepackage{geometry}
-\geometry{left=2.4cm, top=2.6cm, headheight=.8cm, right=2.0cm, bottom=3.0cm, footskip=.8cm}
+\geometry{left=2.4cm, top=2.6cm, headheight=1cm, right=2.0cm, bottom=3.0cm, footskip=1.2cm}
 \input{fonts}
 \usepackage{multicol}
 \pagestyle{empty}
@@ -176,7 +176,7 @@
 
 \newcommand*{\rotrt}[1]{\rotatebox{90}{#1}} % Command to rotate right 90 degrees
 \newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} % Command to rotate left 90 degrees
-\newcommand{\ittt}[3]{\makebox[4em][s]{#1}\makebox[1.4em][l]{#2}{#3}\par}
+\newcommand{\ittt}[3]{\makebox[8em][r]{\gothic #1}\makebox[1.4em][l]{\quad}{\xihei #3}\par}
 
 \newcommand*{\titleBC}{\thispagestyle{empty}
 \begingroup % Create the command for including the title page in the document
@@ -185,8 +185,8 @@
 
 \vspace{2cm}
 
-{\color[HTML]{cd1a5f}
-\fontsize{32}{48}\Copperplate naomoe}
+% {\color[HTML]{cd1a5f}
+% \fontsize{32}{48}\Copperplate naomoe}
 
 {\color{LightGoldenrod}
 \resizebox*{14cm}{\baselineskip}{\rotrt{$]$}}} \\[\baselineskip] % Print top curly bracket
@@ -196,8 +196,9 @@
 {\color{LightGoldenrod}
 \resizebox*{14cm}{\baselineskip}{\rotlft{$]$}}} % Print bottom curly bracket
 
-{\color[HTML]{cd1a5f}
-\fontsize{60}{72}\zhongs\bfseries 闹萌}
+% {\color[HTML]{cd1a5f}
+% \fontsize{60}{72}\zhongs\bfseries 闹萌}
+{\includegraphics[width=5cm]{images/naomoe.png}}
 
 \vspace{2cm} % Whitespace between the title and the author name
 
@@ -223,12 +224,30 @@
 \CTEXnoindent
 \vspace*{\fill}
 
-{\Large
-東山奈央最萌大赛}
+{\Large\hei
+東山奈央最萌大赛
+（闹萌）}
 
 \rule{\textwidth}{0.4pt}
 
-\ittt{编辑}{：}{王者自由}
+\ittt{原　作}{：}{東山奈央}
+\ittt{企　画}{：}{东山奈央吧\quad 奈央同萌会}
+% \ittt{監　督}{：}{王者自由}
+% \ittt{プロデューサー}{：}{千樱随舞}
+\ittt{原　画}{：}{深蓝杰克\quad ぴょん吉}
+% \ittt{提　名}{：}{我太小白\quad 千樱随舞}
+% \ittt{文　字}{：}{偷鸡大师}
+\ittt{運　営}{：}{千樱随舞\quad 王者自由}
+\ittt{}{}{琉璃色の記憶\quad 遊離状态}
+\ittt{}{}{我太小白\quad 雪酥}
+\ittt{}{}{鑫哥有节操\quad 偷鸡大师}
+\ittt{}{}{KA\quad 萌萌的灵梦}
+\ittt{ロゴデザイン}{：}{雪酥\quad 鑫哥有节操}
+% \ittt{公式制作}{：}{王者自由}
+\ittt{サイト・同人誌制作}{：}{王者自由}
+\ittt{公式ホームページ}{：}{nao.toyama.moe}
+\quad\\
+\ittt{制　作}{：}{闹萌制作委员会}
 % \ittt{校对}{：}{末原}
 % \ittt{鸣谢}{：}{zzqtgw\quad 极·OTAKU\quad 津津\quad 时间污染\quad 勤吖$\!$hunter}
 % \ittt{   }{  }{小7\quad 暗笑流\quad 大笨淡の团子}
@@ -239,15 +258,15 @@
 % \ittt{开本}{：}{210mm$\times$297mm\quad A4}
 % \ittt{印张}{：}{13.5}
 % \ittt{定价}{：}{40.00元}
-
-\vspace{1em}
-
-{\large
-版权所有·翻录不究
-
-\small
-允许非盈利目的的转让、复制和再发行。不承担由此引发的任何侵权行为衍生的相关法律责任。
-}
+%
+% \vspace{1em}
+%
+% {\large
+% 版权所有·翻录不究
+%
+% \small
+% 允许非盈利目的的转让、复制和再发行。不承担由此引发的任何侵权行为衍生的相关法律责任。
+% }
 
 \vspace{1em}
 \CTEXindent
