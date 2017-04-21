@@ -20,6 +20,10 @@
 \setCJKfamilyfont{xing}[BoldFont={STXingkaiSC-Bold}]{STXingkaiSC-Light}
 \newcommand{\xing}{\xinge\CJKfamily{xing}}
 
+\newfontfamily\gothice{SourceHanSans-Medium}
+\setCJKfamilyfont{gothic}{SourceHanSans-Medium}
+\newcommand{\gothic}{\gothice\CJKfamily{gothic}}
+
 \newfontfamily\heie{SourceHanSansSC-Medium}
 \setCJKfamilyfont{heiti}{SourceHanSansSC-Medium}
 \newcommand{\hei}{\heie\CJKfamily{heiti}}
@@ -65,3 +69,4 @@
 \newcommand{\tsuku}{\tsukue\CJKfamily{tsuku}}
 
 \newcommand{\Chapter}[1]{\chapter*{#1\markboth{#1}{}}\addcontentsline{toc}{chapter}{#1}}
+\renewcommand{\B}[1]{{\bfseries{#1}}}
