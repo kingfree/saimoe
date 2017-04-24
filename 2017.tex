@@ -44,6 +44,8 @@
 
 \usepackage{pifont}
 
+\usepackage{xhfill}
+
 % \usepackage{fontawesome}
 
 \usepackage{wrapfig}
@@ -78,17 +80,13 @@
 \pagestyle{fancy}
 \fancyhfoffset{0em}
 % \fancyhead[LO,RE]{head}%奇数页左侧，偶数页右侧显示页眉
-\fancyfoot[CO,RE]{}%奇数页中间，偶数页右侧页脚为空
-\fancyfoot[LO,CE]{}%奇数页左侧，偶数页中间页脚为空
-\fancyfoot[RO,LE]{\thepage}
+\fancyfoot[R,L]{}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
-\fancyhead[CO,RE]{}
-\fancyhead[LO,CE]{}
-\fancyfoot[CO,RE]{}
-\fancyfoot[LO,CE]{}
-\fancyfoot[RO,LE]{\thepage}
+\fancyhead[R,L]{}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 }
 %\usepackage{tablestyles}
@@ -234,7 +232,7 @@
 \ittt{企　画}{：}{东山奈央吧\quad 奈央同萌会}
 % \ittt{監　督}{：}{王者自由}
 % \ittt{プロデューサー}{：}{千樱随舞}
-\ittt{原　画}{：}{深蓝杰克\quad ぴょん吉}
+\ittt{原　画}{：}{深蓝杰克\quad {ぴょん吉}\quad 阿七}
 % \ittt{提　名}{：}{我太小白\quad 千樱随舞}
 % \ittt{文　字}{：}{偷鸡大师}
 \ittt{運　営}{：}{千樱随舞\quad 王者自由}
